@@ -1,0 +1,36 @@
+这个项目是cocos2d-js嵌入IOS原生平台的例子
+
+具体实现方式为：
+https://blog.csdn.net/houjia159/article/details/81014787
+
+开发环境是  cocos2d-x-3.17.2    xcode 版本是10.3    
+
+纠正几点:  
+一、文章中的Classes目录替换成当前目录下的Classes,但是不要把Classes加入到工程里
+
+
+
+二、文章中第27步， 必须额外加入以下库
+
+CoreMedia.framework
+AVKit.framework
+WebKit.framework
+SystemConfiguration.framework
+libnetwork.tbd
+libc++.tbd
+
+
+
+三、文章中第26步， 切记Resources导入的时候选择New Group 这样导入的是黄色的，Resources
+    里面的目录导入引用就是蓝色的。
+
+
+
+
+
+如果报错   "_OBJC_CLASS_$_AVPlayerViewController", referenced from:
+先看看是否  BitCode 设置为NO     再查看 Always Search User Paths 是否设置为Yes
+
+
+
+
